@@ -1,5 +1,6 @@
 const textTask = document.createElement('INPUT');
 textTask.id = 'texto-tarefa';
+textTask.className = 'input is-rounded'
 const taskContainer = document.querySelector('.taskContainer');
 taskContainer.appendChild(textTask);
 const listContainer = document.querySelector('.listContainer');
@@ -9,6 +10,7 @@ listContainer.appendChild(list);
 
 const buttonTask = document.createElement('button');
 buttonTask.id = 'criar-tarefa';
+buttonTask.className = 'button'
 taskContainer.appendChild(buttonTask);
 buttonTask.innerText = 'Adicionar';
 function addTask() {
@@ -47,6 +49,7 @@ const eraseButton = document.createElement('button');
 document.querySelector('.buttonsContainer').appendChild(eraseButton);
 eraseButton.innerText = 'Apagar tudo';
 eraseButton.id = 'apaga-tudo';
+eraseButton.className = 'button'
 function eraseAll() {
     let itensList = document.querySelectorAll('li');
     for (let item of itensList) {
@@ -59,6 +62,7 @@ const eraseComplete = document.createElement('button');
 document.querySelector('.buttonsContainer').appendChild(eraseComplete);
 eraseComplete.innerText = 'Apagar tarefas riscadas';
 eraseComplete.id = 'remover-finalizados';
+eraseComplete.className = 'button'
 function eraseCompleted() {
     let itensList = document.querySelectorAll('.completed');
     for (let item of itensList) {
@@ -71,6 +75,7 @@ const saveButton = document.createElement('button');
 document.querySelector('.buttonsContainer').appendChild(saveButton);
 saveButton.id = 'salvar-tarefas';
 saveButton.innerText = 'Salvar';
+saveButton.className = 'button'
 saveButton.addEventListener('click', function() {
     localStorage.setItem('listItens', list.innerHTML)
 })
@@ -86,6 +91,7 @@ const eraseSelected = document.createElement('button');
 eraseSelected.id = 'remover-selecionado';
 document.querySelector('.buttonsContainer').appendChild(eraseSelected);
 eraseSelected.innerText = 'Apagar selecionado';
+eraseSelected.className = 'button'
 eraseSelected.addEventListener('click', function() {
     let selectedItem = document.querySelector('.selected');
     list.removeChild(selectedItem);
